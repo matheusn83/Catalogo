@@ -3,13 +3,20 @@
         <title>Far Uniformes</title>
         <meta charset="utf-8" />
         <style>
-            #produtos,
-            #carrinhos{
+            #produtos{
                 max-width: 900px;
                 margin: 0 auto;
                 padding: 0 2%;
                 display: flex;
             }
+
+            #carrinhos{
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 0 2%;
+                display: block;
+            }
+
             .produto-single{
                 width: 33.3%;
                 padding: 0 20px;
@@ -28,19 +35,19 @@
             const items = [
                 {
                     id: 0,
-                    nome: 'camiseta1',
+                    nome: 'camiseta preta',
                     img:'image.png',
                     quantidade: 0
                 },
                 {
                     id: 1,
-                    nome: 'camiseta2',
+                    nome: 'camiseta branco',
                     img:'image.png',
                     quantidade: 0
                 },
                 {
                     id: 2,
-                    nome: 'camiseta3',
+                    nome: 'camiseta cinza',
                     img:'image.png',
                     quantidade: 0
                 },
@@ -64,6 +71,7 @@
 
                 atualizarCarrinho = () => {
                     var containerCarrinho = document.getElementById('carrinho');
+                    containerCarrinho.innerHTML = "";
                     items.map((val)=>{
                         if(val.quantidade > 0){
                         containerCarrinho.innerHTML += `
